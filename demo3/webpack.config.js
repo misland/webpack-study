@@ -12,7 +12,7 @@ module.exports = {
         chunkFilename: '[name].chunk.js'
     },
     optimization: {
-        //是否压缩代码
+        //是否压缩代码，这里设置为false后即使是production模式下打包后的代码也不会被压缩
         minimize: false,
         splitChunks: {
             cacheGroups:{
@@ -25,6 +25,7 @@ module.exports = {
                 },
                 vendor: {
                     name: 'vendor',
+                    //test表示要打包的文件夹
                     test: /[\\/]node_modules[\\/]/,
                     chunks: 'all',
                     priority: 10
