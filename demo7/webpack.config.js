@@ -25,6 +25,8 @@ module.exports = {
                 use: extractTextPlugin.extract({
                     //fallback的作用是处理没有单独打包的scss，这时用fallback中设置的loader来处理
                     //这样的话下面plugins中的allChunks就要设置为false才行
+                    //比如本例子中的common.scss是通过事件引入的，那就要用这个配置了
+                    //把common.scss转换成一个style标签插入到head中
                     fallback: {
                         loader: 'style-loader'
                     },
