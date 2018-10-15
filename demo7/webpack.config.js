@@ -16,6 +16,7 @@ module.exports = {
             {
                 test: /\.scss$/,
                 //extract-text-webpack-plugin插件的作用
+                //插件版本要和webpack的版本一致，最初用的3.X无法打包
                 //用于将所有入口文件中引用的css或scss文件分离出来，打包成一个单独的css文件，具体名字就是plugins中设置的[name].min.css
                 //为什么要把css文件单独打包出来？
                 //为了加载时更快速，因为默认是将css文件和js文件打包在一起，加载的时候也是一起加载
