@@ -29,7 +29,10 @@ let config = {
                 })
             },
             {
-                test: /\.(eot|woff2?|ttf|svg)$/,
+                //用url-loader打包字体文件
+                //问题：有几个格式的字体文件，为什么打包后格式为svg？
+                //根据打包时输出的信息，好像是因为.svg格式的文件是最后打包的，所以将最后的文件格式定义为svg
+                test: /\.(eot|woff2?|svg|ttf)$/,
                 use: {
                     loader: 'url-loader',
                     options: {
